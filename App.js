@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 /*
 <div>
     <div>
@@ -13,7 +16,7 @@ const parent = React.createElement(
     React.createElement(
         "div", 
         {id : "child"},[
-        React.createElement("h1", {},"I'm an h1 tag"),       //Making siblings -> will come at same level
+        React.createElement("h1", {},"I'm an h1 tag hihhi"),       //Making siblings -> will come at same level
         React.createElement("h2",{},"I'm an h2 tag")
         ]
     )

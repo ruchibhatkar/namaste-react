@@ -1,0 +1,32 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "This is Namaste React",
+  "keywords": [],
+  "homepage": "https://github.com/ruchibhatkar/namaste-react#readme",
+  "bugs": {
+    "url": "https://github.com/ruchibhatkar/namaste-react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruchibhatkar/namaste-react.git"
+  },
+  "license": "ISC",
+  "author": "Ruchi Bhatkar",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.1"
+  },
+  "browserslist":[
+    "last 2 versions"
+  ]
+}
