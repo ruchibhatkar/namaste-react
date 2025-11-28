@@ -1,36 +1,32 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-/*
-<div>
-    <div>
-        <h1>I'm an h1 tag</h1>
-    </div>
-</div>
-*/
+//Core react element
+// const heading = React.createElement("h1", { id: "heading" }, "Namaste React");
 
-//Nested React elements
-const parent = React.createElement(
-    "div", 
-    {id : "parent"}, 
-    React.createElement(
-        "div", 
-        {id : "child"},[
-        React.createElement("h1", {},"I'm an h1 tag hihhi"),       //Making siblings -> will come at same level
-        React.createElement("h2",{},"I'm an h2 tag")
-        ]
-    )
+//JSX - is HTML like syntax
+const jsxHeading = <h1 id="heading">Namaste React from JSX</h1>;
+
+//React functional Component
+const Title = () => (
+  <h1 className="head" tabIndex="5">
+    Namaste React from Title Functional Component
+  </h1>
 );
 
-
-// const heading = React.createElement(
-//     "h1", 
-//     {id : "heading"}, 
-//     "Hello World from React"
-// );
-
-console.log(parent);
+//React functional Component
+const HeadingComponent = () => (
+  <div id="container">
+    <Title />
+    {jsxHeading}
+    <h2>{100 + 200}</h2>
+    <h1 className="heading">Namaste React Functional Component</h1>
+  </div>
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-        
-root.render(parent);
+
+//root.render(jsxHeading);
+
+//Rendering react functional component
+root.render(<HeadingComponent />);
