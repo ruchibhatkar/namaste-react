@@ -1,1 +1,18 @@
-#Namaste React
+# Namaste React
+
+# Food Ordering App
+
+# Structure
+
+- Header
+- - Logo
+- - Nav Items
+- Body
+- - Search
+- - Restaurant Container
+- - Restaurant Card
+- Footer
+- - Copyright
+- - Links
+- - Address
+- - Contact
