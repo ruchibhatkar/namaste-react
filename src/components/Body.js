@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   //Local state variable
@@ -14,9 +15,11 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.4914883&lng=73.82172899999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING#",
-    );
+    // const data = await fetch(
+    //   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.4914883&lng=73.82172899999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING#",
+    // );
+
+    const data = await fetch("https://namastedev.com/api/v1/listRestaurants");
 
     const json = await data.json();
 
@@ -24,12 +27,12 @@ const Body = () => {
 
     //Optional chaining
     setListOfRestaurant(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+      json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants,
     );
 
     setFilteredRestaurant(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+      json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants,
     );
   };
@@ -80,7 +83,12 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurant.map((Restaurant) => (
-          <RestaurantCard key={Restaurant.info.id} resData={Restaurant} />
+          <Link
+            key={Restaurant.info.id}
+            to={"/restaurants/" + Restaurant.info.id}
+          >
+            <RestaurantCard resData={Restaurant} />
+          </Link>
         ))}
       </div>
     </div>
