@@ -34,7 +34,7 @@
 .res-card {
   margin: 20px;
   padding: 5px;
-  width: 200px;
+  width: 210px;
 }
 
 .res-card:hover {
@@ -44,6 +44,8 @@
 
 .res-logo {
   width: 100%;
+  height: 160px;
+  object-fit: cover;
 }
 
 .filter-btn {
@@ -70,4 +72,22 @@
 
 .filter {
   display: flex;
+}
+
+.userCard {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+a {
+  color: black;
+}
+a:hover {
+  color: #0000ff;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
 }
