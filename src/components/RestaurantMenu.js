@@ -35,19 +35,24 @@ const RestaurantMenu = () => {
   console.log(itemCards);
 
   return (
-    <div className="menu">
-      <h1>{name}</h1>
-      <p>
-        {cuisines.join(", ")} - {costForTwoMessage}
-      </p>
-      <ul>
+    <div className="menu-page">
+      <div className="menu-header">
+        <h1 className="menu-title">{name}</h1>
+        <p className="menu-subtitle">
+          {cuisines.join(", ")} • {costForTwoMessage}
+        </p>
+      </div>
+
+      <div className="menu-card">
+        <h2 className="menu-section-title">Menu</h2>
+
         {itemCards.map((item) => (
-          <li key={item.card.info.id}>
-            {item.card.info.name} - {"Rs."}
-            {item.card.info.price / 100}
-          </li>
+          <div className="menu-item" key={item.card.info.id}>
+            <span className="item-name">{item.card.info.name}</span>
+            <span className="item-price">₹{item.card.info.price / 100}</span>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
