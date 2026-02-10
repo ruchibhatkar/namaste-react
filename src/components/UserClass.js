@@ -6,38 +6,32 @@ class UserClass extends React.Component {
 
     //Creating state variables inside class based components
     this.state = {
-      count: 0,
-      count2: 2,
+      userInfo: {
+        name: "Dummy",
+        location: "Dummy",
+        avatar_url: "",
+      },
     };
-
-    console.log(this.props.name + "Child constructor");
   }
 
-  componentDidMount() {
-    console.log(this.props.name + "Child Class did mount");
+  async componentDidMount() {
+    const data = await fetch("https://api.github.com/users/ruchibhatkar");
+    const json = await data.json();
+
+    console.log(json);
+
+    this.setState({
+      userInfo: json,
+    });
   }
 
   render() {
-    const { name, location } = this.props;
-    const { count, count2 } = this.state;
-
-    console.log(this.props.name + "Child Render");
+    const { name, location, avatar_url } = this.state.userInfo;
 
     return (
       <div className="userCard">
-        <h1>Count: {count}</h1>
-        <button
-          onClick={() => {
-            //Updating value of state variables in class based components
-            this.setState({
-              count: count + 1,
-            });
-          }}
-        >
-          Count Increase
-        </button>
         <h2>Name: {name}</h2>
-        <h3>Location: {location}</h3>
+        <img src="https://avatars.githubusercontent.com/u/145284332?v=4" />
         <h3>Contact: ruchibhatkar</h3>
       </div>
     );
